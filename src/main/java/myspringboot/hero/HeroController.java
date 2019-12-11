@@ -1,5 +1,4 @@
 package myspringboot.hero;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http:localhost:4200")
 @RestController
 @RequestMapping(value = "/heros")
 public class HeroController {
@@ -47,7 +46,8 @@ public class HeroController {
 		if (this.heros.size() != 0) {
 			Hero lastHero = this.heros.stream().skip(this.heros.size() - 1).findFirst().orElse(null);
 			nextId = lastHero.getId() + 1;
-		}//전체 목록의 마지막을 불러와서 id를 생성하는 process
+		}
+		//전체 목록의 마지막을 불러와서 id를 생성하는 process
 
 		hero.setId(nextId);
 		this.heros.add(hero);
@@ -111,3 +111,5 @@ public class HeroController {
 		
 	}
 }
+
+
